@@ -5,10 +5,15 @@ use std::{env, fmt};
 /// Types of supported platforms.
 #[derive(Clone, Debug, Copy, PartialEq, Eq)]
 pub enum Platform {
+    /// Linux with x86
     LinuxAmd64,
+    /// Linux with arm
     LinuxAarch64,
+    /// Mac with x86
     MacOsAmd64,
+    /// Mac with arm(for m1 & m2)
     MacOsAarch64,
+    /// Windows with x86
     WindowsAmd64,
     Unsupported,
 }

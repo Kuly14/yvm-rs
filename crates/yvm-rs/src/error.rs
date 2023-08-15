@@ -2,10 +2,10 @@ use reqwest::StatusCode;
 use thiserror::Error;
 use url::Url;
 
-/// Error types from the svm_lib crate.
+/// Error types from the yvm_lib crate.
 #[derive(Debug, Error)]
-pub enum SolcVmError {
-    #[error("SVM global version not set")]
+pub enum YlemVmError {
+    #[error("YVM global version not set")]
     GlobalVersionNotSet,
     #[error("Unknown version provided")]
     UnknownVersion,
@@ -19,9 +19,9 @@ pub enum SolcVmError {
         expected: String,
         actual: String,
     },
-    #[error("Install step for solc version {0} timed out after {1} seconds")]
+    #[error("Install step for ylem version {0} timed out after {1} seconds")]
     Timeout(String, u64),
-    #[error("Unable to patch solc binary for nixos. stdout: {0}. stderr: {1}")]
+    #[error("Unable to patch ylem binary for nixos. stdout: {0}. stderr: {1}")]
     CouldNotPatchForNixOs(String, String),
     #[error(transparent)]
     IoError(#[from] std::io::Error),
@@ -33,6 +33,8 @@ pub enum SolcVmError {
     UrlError(#[from] url::ParseError),
     #[error("Received unsuccessful response with code {1} for {0}")]
     UnsuccessfulResponse(Url, StatusCode),
+    #[error("Unsupported Operating System {0}")]
+    UnsupportedOs(String),
     #[cfg(all(target_os = "windows", target_arch = "x86_64"))]
     #[error(transparent)]
     ZipError(#[from] zip::result::ZipError),

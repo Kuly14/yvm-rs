@@ -1,0 +1,11 @@
+{
+    "builds": [
+        {
+            "version": "1.0.0",
+            "sha256": "0x0xcc5c663d1fe17d4eb4aca09253787ac86b8785235fca71d9200569e662677990"
+        }
+    ],
+    "releases": {
+        "1.0.0": "ylem-darwin-x86_64"
+    }
+}
