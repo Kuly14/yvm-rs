@@ -1,11 +1,11 @@
 {
     "builds": [
         {
-            "version": "1.0.29",
-            "sha256": "0x5a2ea3c3c05bbd1b5633295e2e32dd2626eed122805bb1ffe846b9787862d745"
+            "version": "1.1.0",
+            "sha256": "0xaf78cbca8dfd1e7613cb475275163bebb208a26037c046da3c62623eb94c6181"
         }
     ],
     "releases": {
-        "1.0.29": "ylem-linux-x86_64"
+        "1.1.0": "ylem-linux-x86_64"
     }
 }

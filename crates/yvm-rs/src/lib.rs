@@ -460,7 +460,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_version() {
-        let version = "0.8.10".parse().unwrap();
+        let version = "1.1.0".parse().unwrap();
         install(&version).await.unwrap();
         let ylem_path = version_path(version.to_string().as_str()).join(format!("ylem-{version}"));
         let output = Command::new(ylem_path)
@@ -473,13 +473,13 @@ mod tests {
 
         assert!(String::from_utf8_lossy(&output.stdout)
             .as_ref()
-            .contains("0.8.10"));
+            .contains("1.1.0"));
     }
 
     #[cfg(feature = "blocking")]
     #[test]
     fn blocking_test_version() {
-        let version = "0.8.10".parse().unwrap();
+        let version = "1.1.0".parse().unwrap();
         blocking_install(&version).unwrap();
         let ylem_path = version_path(version.to_string().as_str()).join(format!("ylem-{version}"));
         let output = Command::new(ylem_path)
@@ -492,13 +492,13 @@ mod tests {
 
         assert!(String::from_utf8_lossy(&output.stdout)
             .as_ref()
-            .contains("0.8.10"));
+            .contains("1.1.0"));
     }
 
     #[cfg(feature = "blocking")]
     #[test]
     fn can_install_parallel() {
-        let version: Version = "0.8.10".parse().unwrap();
+        let version: Version = "1.1.0".parse().unwrap();
         let cloned_version = version.clone();
         let t = std::thread::spawn(move || blocking_install(&cloned_version));
         blocking_install(&version).unwrap();
@@ -507,7 +507,7 @@ mod tests {
 
     #[tokio::test(flavor = "multi_thread")]
     async fn can_install_parallel_async() {
-        let version: Version = "0.8.10".parse().unwrap();
+        let version: Version = "1.1.0".parse().unwrap();
         let cloned_version = version.clone();
         let t = tokio::task::spawn(async move { install(&cloned_version).await });
         install(&version).await.unwrap();
@@ -517,7 +517,7 @@ mod tests {
     // ensures we can download the latest native ylem for apple silicon
     #[tokio::test(flavor = "multi_thread")]
     async fn can_download_latest_native_apple_silicon() {
-        let latest: Version = "0.8.21".parse().unwrap();
+        let latest: Version = "1.1.0".parse().unwrap();
 
         let artifacts = all_releases(Platform::MacOsAarch64).unwrap();
 
