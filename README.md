@@ -5,7 +5,7 @@ Fork of [svm-rs](https://github.com/alloy-rs/svm-rs), to work with our native Yl
 ### Install
 
 ```sh
-cargo install --locked --git https://github.com/kuly14/yvm-rs
+cargo install --locked --git https://github.com/core-coin/yvm-rs
 ```
 
 ### Usage
