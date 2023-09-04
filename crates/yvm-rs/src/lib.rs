@@ -24,9 +24,6 @@ pub use platform::{platform, Platform};
 mod releases;
 pub use releases::{all_releases, Releases};
 
-/// Declare path to Ylem Version Manager's home directory
-/// On unix-based machines, if "~/.yvm" already exists, then keep using it.
-/// Otherwise, use $XDG_DATA_HOME or ~/.local/share/yvm
 pub static YVM_DATA_DIR: Lazy<PathBuf> = Lazy::new(|| {
     #[cfg(test)]
     {
@@ -35,10 +32,13 @@ pub static YVM_DATA_DIR: Lazy<PathBuf> = Lazy::new(|| {
     }
     #[cfg(not(test))]
     {
-        resolve_data_dir()
+        let mut user_home = dirs::home_dir().expect("could not detect user home directory");
+        user_home.push(".yvm");
+        user_home
     }
 });
 
+#[cfg(test)]
 fn resolve_data_dir() -> PathBuf {
     let home_dir = dirs::home_dir()
         .expect("could not detect user home directory")
