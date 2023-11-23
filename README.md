@@ -37,7 +37,7 @@ yvm remove <version>
 ### TODO
 
  - [x] Mac Arm Tests
- - [ ] Windows Tests
- - [ ] Linux Arm Tests
- - [ ] Linux x86_64 Tests
- - [ ] Mac x86_64 Tests
+ - [x] Windows Tests
+ - [x] Linux Arm Tests
+ - [x] Linux x86_64 Tests
+ - [x] Mac x86_64 Tests
