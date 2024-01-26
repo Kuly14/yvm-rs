@@ -31,11 +31,11 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         targets: "${{ matrix.target }}"
-    - name: Formatting
+    - name: Format
       run: cargo fmt --all -- --check
-    - name: Linting
+    - name: Lint
       run: cargo clippy -- -D warnings
-    - name: Run tests
+    - name: Tests
       run: cargo test --all-features
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --locked --release --target ${{ matrix.target }}
