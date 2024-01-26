@@ -540,7 +540,7 @@ mod tests {
     #[tokio::test]
     #[cfg(all(target_os = "windows", target_arch = "x86_64"))]
     async fn can_install_windows_zip_release() {
-        let version = "0.7.1".parse().unwrap();
+        let version = "1.1.2".parse().unwrap();
         install(&version).await.unwrap();
         let ylem_path =
             version_path(version.to_string().as_str()).join(&format!("ylem-{}", version));
@@ -554,6 +554,6 @@ mod tests {
 
         assert!(String::from_utf8_lossy(&output.stdout)
             .as_ref()
-            .contains("0.7.1"));
+            .contains("1.1.2"));
     }
 }
