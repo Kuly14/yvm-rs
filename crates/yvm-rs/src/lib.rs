@@ -427,7 +427,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_artifact_url() {
-        let version = Version::new(1, 0, 0);
+        let version = Version::new(1, 1, 2);
         // https://github.com/core-coin/ylem/releases/download/1.1.2/ylem-darwin-x86_64
         let artifact = "ylem-linux-arm64";
         assert_eq!(
