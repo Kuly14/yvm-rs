@@ -433,7 +433,7 @@ mod tests {
         assert_eq!(
             artifact_url(Platform::LinuxAarch64, &version, artifact).unwrap(),
             Url::parse(&format!(
-                "https://github.com/core-coin/ylem/releases/download/1.0.0/ylem-linux-arm64"
+                "https://github.com/core-coin/ylem/releases/download/1.1.2/ylem-linux-arm64"
             ))
             .unwrap(),
         )
