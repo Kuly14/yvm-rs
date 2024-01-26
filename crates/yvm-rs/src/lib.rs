@@ -95,7 +95,7 @@ impl Installer {
     #[cfg(all(target_os = "windows", target_arch = "x86_64"))]
     fn install_zip(&self) -> Result<PathBuf, YlemVmError> {
         let version_path = version_path(self.version.to_string().as_str());
-        let ylem_path = version_path.join(&format!("ylem-{}", self.version));
+        let ylem_path = version_path.join(format!("ylem-{}", self.version));
 
         // extract archive
         let mut content = Cursor::new(&self.binbytes);
