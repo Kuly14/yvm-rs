@@ -137,7 +137,7 @@ mod tests {
     async fn test_macos_aarch64() {
         let releases = all_releases(Platform::MacOsAarch64)
             .expect("could not fetch releases for macos-aarch64");
-        let rosetta = Version::new(1, 1, 0);
+        let rosetta = Version::new(1, 1, 2);
         let url1 = artifact_url(
             Platform::MacOsAarch64,
             &rosetta,
